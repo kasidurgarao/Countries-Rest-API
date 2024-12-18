@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 function CountryDetails() {
   const { name } = useParams();
   const navigate = useNavigate();
@@ -61,9 +62,9 @@ function CountryDetails() {
     <div className="md:m-20">
       <button
         onClick={() => navigate("/")}
-        className="md:mb-12 m-4 shadow-custom bg-white px-12 py-2 mx-4 rounded-md dark:bg-gray-800"
+        className="md:mb-12 m-4 shadow-custom bg-white px-12 py-2 mx-4 rounded-md dark:bg-gray-800 flex gap-2 text-lg"
       >
-        ← Back
+        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#5f6368"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg> Back
       </button>
       <div className="flex md:justify-center ">
         <div className="flex flex-col md:flex-row gap-6 p-4 md:gap-20 w-full max-w-6xl">
@@ -121,8 +122,8 @@ function CountryDetails() {
                       key={border.cca3}
                       onClick={() =>
                         navigate(`/country/${border.name.common.toLowerCase()}`)
-                      } // Navigate to border country details
-                      className="shadow-custom bg-white py-2 px-6 text-sm hover:bg-gray-100 dark:bg-gray-800 dark:shadow-none"
+                      } 
+                      className="shadow-custom bg-white py-2 px-4 text-sm hover:bg-gray-100 dark:bg-gray-800 dark:shadow-none"
                     >
                       {border.name.common}
                     </button>
@@ -131,8 +132,8 @@ function CountryDetails() {
               </div>
             ) : (
               <div className="mt-6 flex gap-4">
-                <h3 className="text-lg font-bold">Border Countries:</h3>
-                <p>No Borders</p>
+                <h3 className="text-md font-bold">Border Countries:</h3>
+                <p className="text-md">No Borders</p>
               </div>
             )}
           </div>
