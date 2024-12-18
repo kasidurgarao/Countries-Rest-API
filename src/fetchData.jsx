@@ -76,7 +76,6 @@ import DisplayCountries from "./displayCountries";
 import SearchBar from "./searchBar";
 
 function GetDataAndApplyFilter() {
-  // State variables
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -129,7 +128,7 @@ function GetDataAndApplyFilter() {
           } else if (sortFilter === "altoh") {
             return a.area - b.area;
           }
-          return 0; // Default (no sorting)
+          return 0; 
         });
 
       console.log("Filtered Countries:", filtered);

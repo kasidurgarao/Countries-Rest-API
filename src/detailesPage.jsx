@@ -127,7 +127,6 @@ function CountryDetails() {
               </div>
             </div>
 
-            {/* Border Countries Section */}
             {borderCountries.length > 0 ? (
               <div className="mt-6 flex flex-col md:flex-row md:items-center md:gap-4 ">
                 <h3 className="text-lg font-bold">Border Countries:</h3>

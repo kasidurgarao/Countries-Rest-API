@@ -24,11 +24,6 @@ const router = createBrowserRouter(
 function App() {
   return (
     <RouterProvider router={router}/>
-    // <div>
-    //   <HeaderPage></HeaderPage>
-    //   <GetDataAndApplyFIlter></GetDataAndApplyFIlter>
-    //   <DisplayCountries></DisplayCountries>
-    // </div>
   );
 }
 export default App;
