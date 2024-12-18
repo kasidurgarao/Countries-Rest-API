@@ -14,18 +14,18 @@ function HeaderPage() {
   };
 
   return (
-    <div className="flex items-center justify-between h-16 bg-white dark:bg-slate-800 dark:text-white md:px-12 px-10 shadow-lg">
-      <h1 className="text-sm md:text-lg font-semibold md:pl-10">Where in the World?</h1>
+    <div className="flex items-center justify-between h-20 bg-white dark:bg-slate-800 dark:text-white md:px-32 px-4 shadow-sm">
+      <h1 className="text-lg md:text-2xl font-extrabold ">Where in the World?</h1>
       <button
         className="flex items-center space-x-2"
         onClick={toggleDarkMode}
       >
         {isDarkMode ? (
-          <MoonIcon className="w-6 h-6 text-white" />
+          <MoonIcon className="w-4 h-4 text-white" />
         ) : (
-          <MoonIcon className="w-6 h-6 text-slate-200" />
+          <MoonIcon className="w-4 h-4 text-slate-300" />
         )}
-        <span className="text-sm md:text-lg">{isDarkMode ? "Light Mode" : "Dark Mode"}</span>
+        <span className="text-base md:text-xl">{isDarkMode ? "Light Mode" : "Dark Mode"}</span>
       </button>
     </div>
   );

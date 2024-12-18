@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function DisplayCountries({ data }) {
   const countyList = data?.map((country, index) => (
     <div key={index} className="shadow-md flex flex-col dark:bg-gray-800 rounded-md overflow-hidden ">
-      <Link to={`/country/${country.name.common}`} className="w-full h-full"> {/* Link to country details */}
+      <Link to={`/country/${country.name.common}`} className="w-full h-full"> 
         <img className="w-full h-[250px]" src={country.flags.png} alt={`${country.name.common} flag`} />
         <div className="p-4">
           <h3 className="mb-2 text-xl font-bold">{country.name.common}</h3>

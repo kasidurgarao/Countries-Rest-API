@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-
 function CountryDetails() {
   const { name } = useParams();
   const navigate = useNavigate();
@@ -50,10 +49,18 @@ function CountryDetails() {
   if (!country) {
     return (
       <div className="md:p-4 p-8">
-        <button onClick={() => navigate("/")} className="mb-4 border shadow-md">
-          ← Back
-        </button>
-        {/* <h1>Country not found!</h1> */}
+        {/* <button onClick={() => navigate("/")} className="mb-4 border shadow-md">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="30px"
+            viewBox="0 -960 960 960"
+            width="30px"
+            fill="#5f6368"
+          >
+            <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+          </svg>{" "}
+          Back
+        </button> */}
       </div>
     );
   }
@@ -64,10 +71,19 @@ function CountryDetails() {
         onClick={() => navigate("/")}
         className="md:mb-12 m-4 shadow-custom bg-white px-12 py-2 mx-4 rounded-md dark:bg-gray-800 flex gap-2 text-lg"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#5f6368"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg> Back
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="30px"
+          viewBox="0 -960 960 960"
+          width="30px"
+          fill="#5f6368"
+        >
+          <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+        </svg>{" "}
+        Back
       </button>
       <div className="flex md:justify-center ">
-        <div className="flex flex-col md:flex-row gap-6 p-4 md:gap-20 w-full max-w-6xl">
+        <div className="flex flex-col md:flex-row gap-6 p-4 md:gap-20 w-full max-w-7xl">
           <div>
             <img
               className="md:w-[310px] h-[300px]"
@@ -102,8 +118,7 @@ function CountryDetails() {
                   <b>Top Level Domain:</b> {country.tld}
                 </p>
                 <p>
-                  <b>Currencies:</b>{" "}
-                  {Object.keys(country.currencies) || "N/A"}
+                  <b>Currencies:</b> {Object.keys(country.currencies) || "N/A"}
                 </p>
                 <p>
                   <b>Languages:</b>{" "}
@@ -122,8 +137,8 @@ function CountryDetails() {
                       key={border.cca3}
                       onClick={() =>
                         navigate(`/country/${border.name.common.toLowerCase()}`)
-                      } 
-                      className="shadow-custom bg-white py-2 px-4 text-sm hover:bg-gray-100 dark:bg-gray-800 dark:shadow-none"
+                      }
+                      className="shadow-custom bg-white  h-10 md:w-32 text-sm hover:bg-gray-100 dark:bg-gray-800 dark:shadow-none"
                     >
                       {border.name.common}
                     </button>
