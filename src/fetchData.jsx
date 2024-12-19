@@ -99,12 +99,12 @@ function GetDataAndApplyFilter() {
 
   useEffect(() => {
     const filterData = () => {
-      console.log("Applying Filters:", {
-        searchQuery,
-        regionFilter,
-        subregionFilter,
-        sortFilter,
-      });
+      // console.log("Applying Filters:", {
+      //   searchQuery,
+      //   regionFilter,
+      //   subregionFilter,
+      //   sortFilter,
+      // });
 
       const filtered = countries
         .filter((country) => {
@@ -131,7 +131,7 @@ function GetDataAndApplyFilter() {
           return 0; 
         });
 
-      console.log("Filtered Countries:", filtered);
+      // console.log("Filtered Countries:", filtered);
 
       setFilteredCountries(filtered);
     };

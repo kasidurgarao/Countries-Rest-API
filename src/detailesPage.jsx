@@ -21,12 +21,12 @@ function CountryDetails() {
 
       if (selectedCountry) {
         setCountry(selectedCountry);
-        console.log(
-          "Borders for",
-          selectedCountry.name.common,
-          ":",
-          selectedCountry.borders
-        );
+        // console.log(
+        //   "Borders for",
+        //   selectedCountry.name.common,
+        //   ":",
+        //   selectedCountry.borders
+        // );
       } else {
         setCountry(data[0]);
       }
@@ -38,7 +38,7 @@ function CountryDetails() {
           `https://restcountries.com/v3.1/alpha?codes=${borders}`
         );
         const borderData = await borderResponse.json();
-        console.log("Border countries data:", borderData);
+        // console.log("Border countries data:", borderData);
         setBorderCountries(borderData);
       }
     };
@@ -48,19 +48,8 @@ function CountryDetails() {
 
   if (!country) {
     return (
-      <div className="md:p-4 p-8">
-        {/* <button onClick={() => navigate("/")} className="mb-4 border shadow-md">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="30px"
-            viewBox="0 -960 960 960"
-            width="30px"
-            fill="#5f6368"
-          >
-            <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
-          </svg>{" "}
-          Back
-        </button> */}
+      <div className="md:m-4 m-8">
+        <h1>Loading...</h1>
       </div>
     );
   }
@@ -130,7 +119,7 @@ function CountryDetails() {
             {borderCountries.length > 0 ? (
               <div className="mt-6 flex flex-col md:flex-row md:items-center md:gap-4 ">
                 <h3 className="text-lg font-bold">Border Countries:</h3>
-                <div className="grid md:grid-cols-4 grid-cols-3 gap-2">
+                <div className="grid grid-cols-3 lg:grid-cols-4 md:grid-cols-3 gap-2">
                   {borderCountries.map((border) => (
                     <button
                       key={border.cca3}
